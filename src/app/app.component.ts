@@ -32,6 +32,8 @@ export class AppComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    // custom filter
+    this.dataSource.filterPredicate = (data: UserData, filter: string) => data.name.indexOf(filter) != -1;
   }
 
   ngOnInit() {
