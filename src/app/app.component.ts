@@ -73,7 +73,7 @@ function createNewUser(id: number): UserData {
     name: name,
     progress: Math.round(Math.random() * 100).toString(),
     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))],
-    city: CITIES[Math.round(Math.random() * (COLORS.length - 1))]
+    city: CITIES[Math.round(Math.random() * (CITIES.length - 1))]
   };
 }
 
