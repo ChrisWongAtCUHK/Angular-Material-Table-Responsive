@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { Capability } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,7 @@ export class AppComponent {
     this._service.success('nat', 'dndnnd', this.options);
   }
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'name', 'progress', 'color', 'city'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -71,7 +72,8 @@ function createNewUser(id: number): UserData {
     id: id.toString(),
     name: name,
     progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))],
+    city: CITIES[Math.round(Math.random() * (COLORS.length - 1))]
   };
 }
 
@@ -81,10 +83,15 @@ const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
 const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
   'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
   'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+const CITIES = ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 
+  'Montpellier', 'Bordeaux', 'Lille', 'Rennes', 'Reims', 'Le Havre', 'Saint-Étienne', 
+  'Toulon', 'Grenoble', 'Dijon', 'Nîmes', 'Angers', 'Villeurbanne'
+]
 
 export interface UserData {
   id: string;
   name: string;
   progress: string;
   color: string;
+  city: string;
 }
