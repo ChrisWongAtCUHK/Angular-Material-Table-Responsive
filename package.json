@@ -7,6 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "predeploy": "ng build --prod --base-href https://ChrisWongAtCUHK.github.io/Angular-Material-Table-Responsive/",
+    "deploy": "ngh --no-silent --dir dist/angular-material-table-responsive",
     "e2e": "ng e2e"
   },
   "private": true,
