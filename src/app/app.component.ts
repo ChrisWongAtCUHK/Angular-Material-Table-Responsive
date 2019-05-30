@@ -20,14 +20,13 @@ export class AppComponent {
     // Create 100 users
     const users: UserData[] = [];
     var users1 = [];
-    for (let i = 1; i <= 100; i++) { /*users.push(createNewUser(i));*/
-
-      users1.push({ "cnt": i, "name": "batr" + i });
-
+    for (let i = 1; i <= 100; i++) { 
+      users.push(createNewUser(i));
+      // users1.push({ "id": i, "name": "batr" + i });
     }
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users1);
+    this.dataSource = new MatTableDataSource(users);
   }
 
   ngAfterViewInit() {
@@ -54,13 +53,11 @@ export class AppComponent {
   addbut() {
     window.alert("addbutton");
   }
+
   editbut() {
     window.alert("editbutton");
   }
-
-
 }
-
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
