@@ -33,7 +33,7 @@ export class AppComponent {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     // custom filter
-    this.dataSource.filterPredicate = (data: UserData, filter: string) => data.name.indexOf(filter) != -1;
+    this.dataSource.filterPredicate = (data: UserData, filter: string) => data.name.toLowerCase().indexOf(filter) != -1;
   }
 
   ngOnInit() {
